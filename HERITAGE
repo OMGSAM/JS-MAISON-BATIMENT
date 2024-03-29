@@ -1,0 +1,23 @@
+class Maison extends Batiment {
+    constructor(adresse, prix, superficie, nbEtages) {
+        super(adresse, prix, superficie);
+        this.nbEtages = nbEtages;
+    }
+
+    getNbEtages() {
+        return this.nbEtages;
+    }
+
+    setNbEtages(nbEtages) {
+        if (nbEtages > 0) {
+            this.nbEtages = nbEtages;
+        } else {
+            console.error("Le nombre d'étages doit être > ou 1");
+        }
+    }
+
+    afficher() {
+        super.afficher();
+        console.log(`Nombre d'étages: ${this.nbEtages}`);
+    }
+}
